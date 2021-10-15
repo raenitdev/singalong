@@ -2813,6 +2813,16 @@ input[type="button"].btn-block {
 .dropright .dropdown-toggle:empty::after {
   margin-left: 0; }
 
+.col-megamenu {
+    font-family: "poppins", sans-serif;
+    margin: 20px;
+    height: 100%;
+}
+
+.border-end {
+    border-right: 1px solid #dee2e6!important;
+}
+
 .dropright .dropdown-toggle::after {
   vertical-align: 0; }
 
