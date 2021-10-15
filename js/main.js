@@ -61,22 +61,39 @@
 	carousel();
 
 	$('nav .dropdown').hover(function(){
-		var $this = $(this);
+		// var $this = $(this);
 		// 	 timer;
 		// clearTimeout(timer);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-		$this.find('.dropdown-menu').addClass('show');
+		// $this.addClass('show');
+		// $this.find('> a').attr('aria-expanded', true);
+		// // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
+		$('.megamenu').addClass('show');
+		$('.megamenux').removeClass('show');
+	});
+
+	$('.megamenu').hover(function(){
+		$('.megamenu').addClass('show');
+		$('.megamenux').removeClass('show');
 	}, function(){
-		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
+			$('.megamenu').removeClass('show');
+	});
+
+		$('.megamenux').hover(function(){
+		$('.megamenu').removeClass('show');
+		$('.megamenux').addClass('show');
+	}, function(){
+			$('.megamenux').removeClass('show');
+	});
+
+$('nav .mapdown').hover(function(){
+			$('.megamenu').removeClass('show');
+		// var $this = $(this);
+		// 	 timer;
+		// clearTimeout(timer);
+		// $this.addClass('show');
+		// $this.find('> a').attr('aria-expanded', true);
+		// // $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
+		$('.megamenux').addClass('show');
 	});
 
 
@@ -87,11 +104,15 @@
 	// scroll
 	var scrollWindow = function() {
 		$(window).scroll(function(){
+			$('.megamenu').removeClass('show');
+			$('.megamenux').removeClass('show');
 			var $w = $(this),
 					st = $w.scrollTop(),
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
-
+			navbar.hover(function(){
+				$('.ftco_navbar').addClass('scrolled awake');
+				});
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
 					navbar.addClass('scrolled');	
